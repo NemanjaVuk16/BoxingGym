@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    max-width: 1240px;
+    min-width: 800px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+%bg-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+%clearfix {
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+.clearfix {
+    @extend %clearfix;
+}

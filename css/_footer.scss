@@ -1,0 +1,202 @@
+
+.footer {
+    position: relative;
+    box-shadow: 0 4px 2px -2px $border-color;
+}
+.upper-footer {
+    width: 100%;
+    background-color: $card-background;
+}
+.upper-footer-logo-holder {
+    display: inline-block;
+    width: 15%;
+    padding: 15px;
+    margin: 5px;
+    vertical-align: 44px;     
+}
+.footer-logo {
+    height: 80px;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.footer-logo svg {
+    height: 80px;
+    fill: $background-color;
+}
+.upper-footer-text {
+    display: inline-block;
+    padding: 15px;
+    margin: 5px;
+    width: 53%;
+    font-size: 18px;
+    line-height: 20px;
+}
+.upper-footer-title {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 900;
+    color: $background-color;
+}
+.footer-paragraph {
+    font-size: 18px;
+    line-height: 20px;
+    color: $border-color;
+}
+.upper-footer-contacts {
+    width: 27%;
+    display: inline-block;
+    margin: 5px;
+    padding: 15px;
+    vertical-align: 44px;
+}
+.footer-list-item {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+.footer-list-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $background-color;
+    overflow: hidden;
+    position: relative;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.footer-list-link svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    fill: $card-background;
+    &:hover {
+        height: 25px;
+    }
+}
+.footer-form {
+    position: relative;
+    border: 1px solid $border-color;
+    margin: 5px;
+}
+.footer-input {
+    height: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: $border-color;
+    background: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+.footer-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.footer-btn svg {
+    height: 30px;
+    &:hover {
+        opacity: 0.7;
+        height: 32px;
+    }
+}
+.footer-bottom {
+    background: $border-color;
+    color: $card-background;
+    .wrapper{
+        @extend %clearfix;
+    }
+}
+
+.footer-bottom-text {
+    float: left;
+}
+.copy {
+    margin: 8px;
+    padding: 2px;
+    display: block;
+}
+.design {
+    display: block;
+    margin: 8px;
+    padding: 2px;
+}
+
+.desing-link{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    color: $background-color;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.footer-bottom-links {
+    float: right;
+    margin: 8px;
+    padding: 2px;
+}
+.footer-bottom-list {
+    // display: flex;
+    display: block;
+    margin: 8px;
+    padding: 2px;   
+}
+.footer-bottom-item {
+    display: inline-block;
+    list-style-type: none;
+    padding: 2px;
+    margin: 8px;
+} 
+.footer-bottom-link {
+    font-size: 16px;
+    line-height: 18px;
+    color: $background-color;
+    text-decoration: none;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+@include breakpoint(tablet) {
+    .upper-footer-logo-holder {
+        display: inline-block;
+        width: 16%;
+    }
+    .upper-footer-text {
+        display: inline-block;
+        width: 80%;
+    }
+    .upper-footer-contacts {
+        width: 100%;
+        display: block;
+    }
+}
+@include breakpoint(phone) {
+    .upper-footer-logo-holder {
+        width: 100%;
+    }
+    .upper-footer-text {
+        width: 100%;
+    }
+    .upper-footer-contacts {
+        width: 100%;    
+    }
+    .footer-logo {
+        position: absolute;
+        top: 10px;
+        left: 38%;
+    }
+}

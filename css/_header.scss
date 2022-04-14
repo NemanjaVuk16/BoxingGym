@@ -1,0 +1,241 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $background-color;
+    color: $card-background;
+    padding: 15px 5px 15px;
+    box-shadow: 0 4px 2px -2px $border-color;
+    z-index: 10;
+    width: 100%;
+    .wrapper {
+        @extend %clearfix;
+    }
+}
+.header-sticky {
+    position: fixed;
+    
+}
+.header-holder {
+    text-align: center;
+}
+.title {
+    padding: 5px 10px;
+    margin: 10px;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 82px;
+    text-align: center;
+}
+.title-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $card-background;
+    padding-bottom: 15px;
+    &:hover {
+        color: $border-color;
+    }
+}
+.logo {
+    display: block;
+    float: left;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.logo svg {
+    display: block;
+    height: 80px;
+    fill: $border-color;
+}
+.navigation {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px 0;
+    width: 75%;
+}
+.menu-item {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-left: 66px;
+    &:hover {
+        .drop-down{
+            display: block;
+        }
+    }
+}
+.drop-down {
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: -10px;
+    margin: 20px 10px;
+    padding: 10px;
+    text-align: center;
+    min-width: 125px;
+    z-index: 1;
+    background-color: $background-color;
+    box-shadow: 0 4px 2px -2px $border-color;
+}
+.drop-down-item {
+    padding: 5px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 17px;
+    text-align: center;
+}
+.drop-down-link {
+    display: block;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 500;
+    text-align: left;
+}
+.menu-link {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    
+}
+.btn {
+    font-size: 17px;
+    line-height: 19px;
+    background-color: $background-color;
+    padding: 8px;
+    border: 2px solid $card-background;
+    &:hover{
+        color: $border-color;
+    }
+}
+.menu-link, .btn ,.drop-down-link  {
+    text-decoration: none;
+    color: $card-background;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.menu-item-arrow .menu-link {
+    position:relative;
+    padding-right: 15px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 100%;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid $card-background;
+        border-right: 2px solid $card-background;
+        transform: rotate(135deg);
+    }
+}
+
+.menu-btn {
+    display: none;
+}
+@include breakpoint(tablet) {
+
+    .title {
+        font-size: 35px;
+        line-height: 37px;
+        text-transform: uppercase;
+        margin-right: 90px;
+    }
+    .navigation {
+        display: none;
+    }
+    .navigation.open {
+        display: block;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    .menu-item { 
+        display: block;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        margin-left: 0;
+        &:hover {
+            .drop-down{
+                display: block;
+            }
+        }
+    }
+    .drop-down {
+        position: absolute;
+        top: 0%;
+        left: 41%;
+    }
+    .wrapper {
+        min-width: 40px;
+    }
+    .menu-btn {
+        display: inline-block;
+        position: absolute;
+        right: 50px;
+        top: 45px;
+        height: 50px;
+        width: 50px;
+        // border: 2px solid $card-background;
+        cursor: pointer;
+    }
+    .menu-btn_burger {
+        position: relative;
+        background-color: $card-background;
+        width: 40px;
+        height: 5px;
+        box-shadow: 0 2px 5px $border-color;
+        border: none;
+        outline: none;
+        transition: all .2s ease-in-out;
+        &.menu-btn_burger::before,
+        &.menu-btn_burger::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        background-color: $card-background;
+        box-shadow: 0 2px 5px $border-color;
+        width: 40px;
+        height: 5px;
+        }  
+    }
+    .menu-btn_burger::before {
+        transform: translateY(-15px);
+    }
+    .menu-btn_burger::after {
+        transform: translateY(+5px);
+    }
+    .menu-btn.open .menu-btn_burger {
+        background: transparent;
+        box-shadow: none;
+    }
+    .menu-btn.open .menu-btn_burger::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+    }
+    .menu-btn.open .menu-btn_burger::after {
+        transform: rotate(-45deg);
+        box-shadow: none;
+    }
+}
+@include breakpoint(phone) {
+    .title {
+        font-size: 33px;
+        line-height: 35px;
+        padding-right: 0;
+        margin-right: 22px;
+    }
+    .logo svg {
+        height: 60px;  
+    }
+    .menu-btn {
+        right: 35px;
+        top: 35px;
+    }
+}
